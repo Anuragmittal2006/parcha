@@ -1,17 +1,19 @@
 const CACHE_NAME = "tyreledger-v1";
 
 const ASSETS = [
-  "/",
-  "/index.html",
-  "/dealer.html",
-  "/bill.html",
-  "/orders.html",
-  "/styles.css",
-  "/db.js",
-  "/app-home.js",
+  "./",
+  "./index.html",
+  "./dealer.html",
+  "./bill.html",
+  "./orders.html",
+  "./order-view.html",
+  "./styles.css",
+  "./db.js",
+  "./app-home.js",
   "./data/dealers.json",
   "./data/products.json"
 ];
+
 
 self.addEventListener("install", e => {
   e.waitUntil(
