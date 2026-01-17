@@ -9,8 +9,8 @@ const ASSETS = [
   "/styles.css",
   "/db.js",
   "/app-home.js",
-  "/data/dealers.json",
-  "/data/products.json"
+  "./data/dealers.json",
+  "./data/products.json"
 ];
 
 self.addEventListener("install", e => {
