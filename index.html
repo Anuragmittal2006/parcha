@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tyre Ledger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">
+    <img class="icon" src="/icon/download.png">
+    Tyre Ledger
+     <button id="recentOrders"
+  style="position:fixed;margin-top:12px;right:20px;background:ffffff;">
+  📜 Recent Orders
+</button>
+  </div>
+ 
+
+</div>
+
+<div class="home">
+   <h3>Draft Orders</h3>
+  <div id="draftList" class="draft-list"></div>
+
+</div>
+
+
+<button id="newOrder"
+  style="position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;font-size:28px;">
+  +
+</button>
+<button id="installBtn" style="display:none;">
+  Install App
+</button>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}
+</script>
+
+<script type="module" src="app-home.js"></script>
+</body>
+</html>

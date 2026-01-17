@@ -1,0 +1,456 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Top Bar */
+.topbar {
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  background: #0f172a;
+  color: white;
+  z-index: 10;
+}
+.topbar .title {
+  font-weight: 600;
+}
+
+.topbar .actions {
+  display: flex;
+  gap: 8px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.search-box {
+  margin-top: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.search-box button {
+  padding: 0 14px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+/* Home */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+   padding: 12px;
+  min-height: calc(100vh - 60px);
+}
+
+
+.welcome h2 {
+  margin-bottom: 8px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  margin: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.price {
+  color: #2563eb;
+}
+
+.details {
+  margin-top: 10px;
+  font-size: 14px;
+  display: none;
+  color: #334155;
+}
+
+.card.open .details {
+  display: block;
+}
+
+/* Desktop tweak */
+@media (min-width: 768px) {
+  .topbar {
+    padding: 20px 40px;
+  }
+}
+.install {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+.icon-btn {
+  padding: 0 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  background: #334155;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sort panel */
+.sort-panel {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.sort-item {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.sort-item:hover {
+  background: #f1f5f9;
+}
+
+.sort-item:last-child {
+  border-bottom: none;
+}
+.logo .icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* ===== BILL UI ===== */
+
+.bill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.bill-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.bill-header .date {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.bill-table th {
+  font-size: 12px;
+  color: #475569;
+  text-align: left;
+  padding-bottom: 6px;
+}
+
+.bill-table th.qty,
+.bill-table th.rate,
+.bill-table th.amount,
+.bill-table td.qty,
+.bill-table td.rate,
+.bill-table td.amount {
+  text-align: right;
+}
+
+.bill-table td {
+  padding: 6px 0;
+  font-size: 14px;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.bill-table td.name {
+  width: 50%;
+}
+
+.bill-add {
+  margin-top: 12px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.bill-summary {
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+.bill-summary .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.bill-summary .total {
+  font-weight: 700;
+  font-size: 16px;
+}
+.bill-table td.editable {
+  cursor: pointer;
+}
+
+.bill-table td.delete {
+  cursor: pointer;
+  color: #ef4444;
+  text-align: right;
+}
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bill-table th {
+  font-size: 12px;
+  color: #64748b;
+  text-align: left;
+}
+
+.bill-table th.qty,
+.bill-table th.rate,
+.bill-table th.amount,
+.bill-table td.qty,
+.bill-table td.rate,
+.bill-table td.amount {
+  text-align: right;
+}
+
+.bill-table td {
+  padding: 6px 0;
+  border-bottom: 1px dashed #e5e7eb;
+  font-size: 14px;
+}
+
+.bill-add {
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  text-align: center;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.delete {
+  cursor: pointer;
+  color: #ef4444;
+  text-align: right;
+}
+#searchResults {
+  background: white;
+  border-radius: 8px;
+  margin-top: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.search-item {
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.search-item:hover {
+  background: #f1f5f9;
+}
+.entry input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.entry-row {
+  display: flex;
+  gap: 8px;
+}
+
+.entry-row input {
+  flex: 1;
+}
+
+#results {
+  background: white;
+  border-radius: 8px;
+  margin-top: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.result {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.result:hover {
+  background: #f1f5f9;
+}
+.bill-summary input {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 4px 6px;
+}
+@media print {
+  body {
+    background: white;
+  }
+
+  .topbar,
+  button {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  .bill-summary {
+    font-size: 13px;
+  }
+}
+/* ===== SMALL PARCHA PRINT ===== */
+
+#parcha {
+  width: 100%; /* default screen */
+}
+@media print {
+  #parcha {
+    width: 100mm; /* chhota parcha */
+    margin: 0;
+  }
+}
+
+/* PRINT MODE */
+@media print {
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* hide buttons, headers */
+  .topbar,
+  button {
+    display: none !important;
+  }
+
+  /* chhota parcha size */
+  #parcha {
+    width: 100mm;          /* approx 1/4 A4 */
+    font-size: 11px;
+  }
+
+  table {
+    width: 100%;
+    font-size: 11px;
+  }
+
+  th, td {
+    padding: 2px 0;
+  }
+
+  .bill-summary {
+    font-size: 12px;
+  }
+}
+.card small {
+  color: #64748b;
+}
+.draft-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.draft-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+.draft-card .info {
+  flex: 1;
+}
+
+.draft-card small {
+  color: #64748b;
+}

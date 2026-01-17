@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <button id="back" class="icon-btn">←</button>
+  <div class="title">Order</div>
+  <div class="actions">
+    <button id="printBtn" class="icon-btn">🖨️</button>
+    <button id="waImgBtn" class="icon-btn">📤</button>
+  </div>
+</div>
+
+<div id="parcha">
+<div class="card">
+  <h3 id="dealer"></h3>
+  <p id="date"></p>
+
+  <table class="bill-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th class="qty">Qty</th>
+        <th class="rate">Rate</th>
+        <th class="amount">Amt</th>
+      </tr>
+    </thead>
+    <tbody id="items"></tbody>
+  </table>
+
+  <div class="bill-summary">
+    <div class="row">
+      <span>Subtotal</span>
+      <span id="subtotal"></span>
+    </div>
+    <div class="row">
+      <span>Adjustment</span>
+      <span id="adjustment"></span>
+    </div>
+    <div class="row total">
+      <span>Total</span>
+      <span id="total"></span>
+    </div>
+  </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<script type="module" src="app-order-view.js"></script>
+</body>
+</html>
